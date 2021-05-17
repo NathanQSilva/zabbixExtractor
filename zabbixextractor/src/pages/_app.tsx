@@ -1,13 +1,12 @@
 // Styles
 import '../styles/globals.scss'
 
-// Internar imports
-import { LoginContextProvider } from '../contexts/loginContext'
+import { LoginContextProvider } from '../contexts/LoginContext'
 
 function MyApp({ Component, pageProps }) {
   return (
     <LoginContextProvider>
-      <Component {...pageProps} />
+      <Component { ...pageProps } />
     </LoginContextProvider>
   )
 }

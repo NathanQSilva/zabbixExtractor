@@ -1,94 +1,66 @@
-// Styles
-import styles from './index.module.scss';
-
-// Internal imports
-import { useLogin } from '../contexts/loginContext'
-
-// External imports
 import React from 'react';
+import { useFormik } from 'formik';
+import Link from 'next/link';
 
-const {
-  setLoginData,
-} = useLogin()
-
-// Functions
-function sendLogin(usuario, senha, servidor) {
+import { useLogin } from '../contexts/LoginContext';
 
 
-  //setLoginData(usuario, senha, servidor)
+const SignupForm = () => {
 
-  window.location.href = "/home"
-}
+  const {
+    GetLoginKey,
+    zabbixKey
+  } = useLogin()
 
-// Main code
-export default class LoginPage extends React.Component {
+  const formik = useFormik({
+    initialValues: {
+      user: '', 
+      password: '',
+      server: '',
+    },
 
-  // Constructor Form
-  constructor(props) {
-    super(props);
+    onSubmit: values => {
+      GetLoginKey(values)
+    },
+  });
 
-    this.state = {
-      user: "",
-      pass: "",
-      address: "",
-    }
-  }
+  return (
+    <div> 
+      <h1>Config API</h1>
+      <form onSubmit={formik.handleSubmit}>
+        <label>User</label>
+        <input
+          id="user"
+          name="user"
+          type="text"
+          onChange={formik.handleChange}
+          value={formik.values.user}
+        />
+        <label>Password</label>
+        <input
+          id="password"
+          name="password"
+          type="password"
+          onChange={formik.handleChange}
+          value={formik.values.password}
+        />
+        <label>Server</label>
+        <input
+          id="server"
+          name="server"
+          type="text"
+          onChange={formik.handleChange}
+          value={formik.values.server}
+        />
+        <button type="submit">Save options</button>
+        <Link href="/home">
+          <button>
+            Entrar
+          </button>
+        </Link>
+      </form>
+    </div>
+  );
+};
 
-  // Internal events
-  userChanged(event) {
-    this.setState({
-      user: event.target.value
-    })
-  }
-
-  passChanged(event) {
-    this.setState({
-      pass: event.target.value
-    })
-  }
-
-  serverChanged(event) {
-    this.setState({
-      address: event.target.value
-    })
-  }
-
-  buttonClicked() {
-    var user = this.state.user;
-    var pass = this.state.pass;
-    var address = this.state.address;
-
-    sendLogin(user, pass, address)
-  }
-
-  // Render
-  render() {
-    return (
-      <div className={styles.indexPage}>
-  
-        <div className={styles.loginFormContainer}>
-  
-          <div className={styles.loginLogo}>
-            <img src="/logo_transparent.png" alt="Logo zabbix extractor" width="200"/>
-          </div>
-  
-          <div className={styles.loginData}>
-            <label>Username</label><br/>
-            <input type="text" value={this.state.user} onChange={this.userChanged.bind(this)} /><br/>
-  
-            <label>Password</label><br/>
-            <input type="password" value={this.state.pass} onChange={this.passChanged.bind(this)} /><br/>
-  
-            <label>Server</label><br/>
-            <input type="text" value={this.state.address} onChange={this.serverChanged.bind(this)} /><br/>
-          </div>
-  
-          <div className={styles.loginButton}>
-            <button onClick={this.buttonClicked.bind(this)}>Login</button>
-          </div>
-  
-        </div>
-      </div>
-    );
-  }
-}
+export default SignupForm
