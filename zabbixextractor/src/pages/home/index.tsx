@@ -12,7 +12,16 @@ export default function loginPage() {
         zabbixKey,
     } = useLogin()
 
-    const [ data, setData ] = useState([{'x': 1, 'y':2}, {'x': 2, 'y': 4}, {'x': 3, 'y': 3}])
+    const [ data, setData ] = useState([])
+
+    function convertData(arr) {
+        return arr.map( obj => {
+            return {
+                x: obj.clock,
+                y: obj.value
+            };
+        });
+    }
 
     function HistoryGet() {
         axios({
@@ -30,32 +39,31 @@ export default function loginPage() {
                                 "value"
                             ],
                     "history": 0,
-                    "itemids": "29200",
+                    "itemids": "29177",
                     "sortfield": "clock",
                     "sortorder": "DESC",
-                    "limit": 10
+                    "limit": 10000
                 },
-                "auth": "77904f23f456ac6ff847bac8776f883d",
+                "auth": zabbixKey,
                 "id": 1
             })
         })
         .then((response) => {
-            console.log(response.data.result)
+            setData(convertData(response.data.result))
         })
     }
-
-    
-
 
     return (
         <div>
             <button onClick={HistoryGet}>
                 Chamada
             </button>
-            <XYPlot width={300} height={300}>
+            <XYPlot height={720} width= {1080}>
+                <LineSeries data={data} />
+                <VerticalGridLines />
+                <HorizontalGridLines />
                 <XAxis />
                 <YAxis />
-                <LineSeries data={data} />
             </XYPlot>
         </div>
     )
