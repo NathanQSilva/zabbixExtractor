@@ -1,7 +1,6 @@
 //// External imports
 import React from 'react';
 import { useFormik } from 'formik';
-import Link from 'next/link';
 
 //// Internal imports
 // Import of context login
@@ -11,12 +10,11 @@ import { useLogin } from '../contexts/LoginContext';
 import styles from './index.module.scss'
 
 
-const SignupForm = () => {
-
+export function SignupForm() {
   // consts imported of login context
   const {
     GetLoginKey,
-    zabbixKey
+    saved
   } = useLogin()
 
   // const for form with formik
@@ -32,6 +30,10 @@ const SignupForm = () => {
       GetLoginKey(values)
     },
   });
+
+  function goHome() {
+    window.location.href = "/home"
+  }
 
   // Html of login page
   return (
@@ -68,11 +70,13 @@ const SignupForm = () => {
         </div>
         <div className={styles.loginButton}>
           <button type="submit" className={styles.saveButton}>Save options</button>
-          <Link href="/home">
-            <button className={styles.enterButton} disabled={zabbixKey === ''}>
-              Enter
-            </button>
-          </Link>
+          <button
+            className={styles.enterButton} 
+            disabled={saved == false}
+            onClick={goHome}
+          >
+            Enter
+          </button>
         </div>
       </form>
     </div>

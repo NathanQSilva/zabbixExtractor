@@ -2,15 +2,16 @@
 import '../styles/globals.scss'
 
 // Internal imports
-import { LoginContextProvider } from '../contexts/LoginContext'
-import { Head } from '../components/Header/index'
+import { LoginContextProvider } from '../contexts/LoginContext';
+import { SignupForm } from '../pages/index';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <LoginContextProvider>
-      <Head />
-      <Component { ...pageProps } />
-    </LoginContextProvider>
+    <LoginContextProvider >
+      <Component >
+        <SignupForm />
+      </Component>
+    </LoginContextProvider> 
   )
 }
 

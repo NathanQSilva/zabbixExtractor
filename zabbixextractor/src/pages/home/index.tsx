@@ -5,7 +5,8 @@ import '../../../node_modules/react-vis/dist/style.css';
 import axios from 'axios';
 
 // Internal imports
-import { useLogin } from "../../contexts/LoginContext"
+import { useLogin } from "../../contexts/LoginContext";
+import { Head } from '../../components/Header/index';
 
 export default function loginPage() {
     const {
@@ -55,20 +56,22 @@ export default function loginPage() {
     }
 
     return (
-        <div>
-            <button onClick={HistoryGet}>
-                Chamada
-            </button>
-            <p>
-                {zabbixServer}
-            </p>
-            <XYPlot height={720} width= {1080}>
-                <VerticalGridLines />
-                <HorizontalGridLines />
-                <XAxis />
-                <YAxis />
-                <LineSeries data={data} />
-            </XYPlot>
-        </div>
+        <Head>
+            <div>
+                <button onClick={HistoryGet}>
+                    Chamada
+                </button>
+                <p>
+                    {zabbixServer}
+                </p>
+                <XYPlot height={720} width= {1080}>
+                    <VerticalGridLines />
+                    <HorizontalGridLines />
+                    <XAxis />
+                    <YAxis />
+                    <LineSeries data={data} />
+                </XYPlot>
+            </div>
+        </Head>
     )
 }

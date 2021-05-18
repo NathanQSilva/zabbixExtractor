@@ -15,6 +15,7 @@ type LoginContextData = {
     GetLoginKey: (formValues: valuesData) => void;
     zabbixKey: string;
     zabbixServer: string;
+    saved: boolean;
 }
 
 //Type for context access in all code
@@ -29,6 +30,7 @@ export const LoginContext = createContext({} as LoginContextData);
 export function LoginContextProvider({ children }: LoginContextProviderProps) {
     const [ zabbixKey, setZabbixKey ] = useState('')
     const [ zabbixServer, setZabbixServer ] = useState('')
+    const [ saved, setSaved ] = useState(false)
 
     function GetLoginKey(formValues: valuesData) {
         axios({
@@ -49,11 +51,10 @@ export function LoginContextProvider({ children }: LoginContextProviderProps) {
             })
         })
         .then((response) => {
-            // Save key in state
-            setZabbixKey(response.data.result)
+                setZabbixKey(response.data.result)
+                setSaved(true)
+                setZabbixServer(formValues.server) 
         })
-        // Save server in state
-        setZabbixServer(formValues.server)
     }
 
     return (
@@ -62,6 +63,7 @@ export function LoginContextProvider({ children }: LoginContextProviderProps) {
                 GetLoginKey,
                 zabbixKey,
                 zabbixServer,
+                saved,
             }}
         >
             {children}

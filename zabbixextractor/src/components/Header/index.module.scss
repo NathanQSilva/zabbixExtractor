@@ -1,0 +1,51 @@
+.homeHeader {
+    width: 100%;
+    height: 40px;
+    background: #1a7f81;
+    color: white;
+    
+    display: flex;
+    justify-content: space-between;
+
+    button {
+        height: 30px;
+        width: 100px;
+
+        border-radius: 5px;
+        border: 0;
+        margin: 5px 10px;
+
+        transition: filter 0.3s;
+    }
+
+    .dashOptions {
+        width: 600px;
+
+        button {
+            color: var(--gray-800);
+
+            &:hover {
+                filter: brightness(0.9);
+
+            }
+        }
+
+    }
+
+    .userOptions {
+        width: 600px;
+
+        display: flex;
+        justify-content: flex-end;
+
+        button {
+            width: 36px;
+            background: transparent;
+            filter: invert(1);
+
+            &:hover {
+                filter: invert(0)
+            }
+        }
+    }
+}
