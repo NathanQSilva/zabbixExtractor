@@ -10,6 +10,7 @@ import { useLogin } from "../../contexts/LoginContext"
 export default function loginPage() {
     const {
         zabbixKey,
+        zabbixServer,
     } = useLogin()
 
     const [ data, setData ] = useState([])
@@ -25,7 +26,7 @@ export default function loginPage() {
 
     function HistoryGet() {
         axios({
-            url: 'http://172.16.174.150/api_jsonrpc.php',
+            url: zabbixServer,
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
@@ -58,12 +59,15 @@ export default function loginPage() {
             <button onClick={HistoryGet}>
                 Chamada
             </button>
+            <p>
+                {zabbixServer}
+            </p>
             <XYPlot height={720} width= {1080}>
-                <LineSeries data={data} />
                 <VerticalGridLines />
                 <HorizontalGridLines />
                 <XAxis />
                 <YAxis />
+                <LineSeries data={data} />
             </XYPlot>
         </div>
     )

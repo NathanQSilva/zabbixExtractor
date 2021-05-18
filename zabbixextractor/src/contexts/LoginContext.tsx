@@ -1,19 +1,23 @@
-// External importations
+//// External imports
 import axios from 'axios';
 import { createContext, useState, ReactNode, useContext } from 'react';
 
-// Types
+//// Types
+// Type for data in login process 
 type valuesData = {
     user: string;
     password: string;
     server: string;
 }
 
+// Type for all exports of context
 type LoginContextData = {
     GetLoginKey: (formValues: valuesData) => void;
     zabbixKey: string;
+    zabbixServer: string;
 }
 
+//Type for context access in all code
 type LoginContextProviderProps = {
     children: ReactNode;
 }
@@ -23,8 +27,8 @@ export const LoginContext = createContext({} as LoginContextData);
 
 // Creation of consts and functions shared
 export function LoginContextProvider({ children }: LoginContextProviderProps) {
-    const [ zabbixKey, setZabbixKey ] = useState('key')
-    
+    const [ zabbixKey, setZabbixKey ] = useState('')
+    const [ zabbixServer, setZabbixServer ] = useState('')
 
     function GetLoginKey(formValues: valuesData) {
         axios({
@@ -45,8 +49,11 @@ export function LoginContextProvider({ children }: LoginContextProviderProps) {
             })
         })
         .then((response) => {
+            // Save key in state
             setZabbixKey(response.data.result)
         })
+        // Save server in state
+        setZabbixServer(formValues.server)
     }
 
     return (
@@ -54,6 +61,7 @@ export function LoginContextProvider({ children }: LoginContextProviderProps) {
             value = {{
                 GetLoginKey,
                 zabbixKey,
+                zabbixServer,
             }}
         >
             {children}

@@ -1,12 +1,13 @@
 .indexPage {
     display: flex;
     justify-content: center;
-    margin-top: 10%;
+    margin-top: 7%;
 
     .loginFormContainer {
         background: var(--white);
         border: 1px solid var(--gray-500);
         border-radius: 7px;
+        padding-bottom: 1rem;
     
         display: flex;
         flex-direction: column;
@@ -34,9 +35,49 @@
         }
 
         .loginButton {
-            button {
-                color: red;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+
+            .saveButton {
+                height: 2.1rem;
+                width: 9rem;
+                border-radius: 15px;
+                border: 0;
+
+                color: white;
+                background: var(--purple-800);
+
+                transition: filter 0.2s;
+
+                &:hover:not(:disabled) {
+                    filter: brightness(0.7);
+                }
+
             }
+
+            .enterButton {
+                height: 2.1rem;
+                width: 9rem;
+                border-radius: 15px;
+                border: 0;
+
+                color: white;
+                background: var(--green-500);
+
+                transition: filter 0.2s;
+
+                &:disabled {
+                    background: var(--red-500);
+                    cursor: default;
+                }
+
+                &:hover:not(:disabled) {
+                    filter: brightness(0.7);
+                }
+            }
+
+            
         }
     }
 }
