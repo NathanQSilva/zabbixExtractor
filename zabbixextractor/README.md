@@ -44,10 +44,12 @@
 <!--te-->
 <p>Meu nome é Nathan Quadros, tenho 22 anos, estudo desenvolvimento Backend a 6 anos e monitoramento a 3 anos, tenho interesse em aprender mais sobre Frontend e deixar minha contribuição para toda a comunidade de monitoramento com relatórios completos.</p>
 
-<a href="https://avatars.githubusercontent.com/u/72088284?s=96&v=4">
- <img style="border-radius: 50%;" src="https://avatars3.githubusercontent.com/u/380327?s=460&u=61b426b901b8fe02e12019b1fdb67bf0072d4f00&v=4" width="100px;" alt=""/>
+<div align="center">
+<a href="https://github.com/NathanQSilva" align="center">
+ <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/72088284?s=96&v=4" width="100px;" alt="" align="center"/>
  <br />
- <sub><b>Thiago Marinho</b></sub></a> <a href="https://blog.rocketseat.com.br/author/thiago//" title="Rocketseat">🚀</a>
+ <sub><b>Nathan Quadros</b></sub></a><br>
+ Feito com ❤️ por Nathan Quadros 👋🏽 Entre em contato!<br>
+</div>
 
 
-Feito com ❤️ por Thiago Marinho 👋🏽 Entre em contato!
