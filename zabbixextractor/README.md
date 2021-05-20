@@ -5,10 +5,7 @@
 
 <p align="center">
  <a href="#objetivo">Objetivo</a> •
- <a href="#roadmap">Roadmap</a> • 
  <a href="#tecnologias">Tecnologias</a> • 
- <a href="#contribuicao">Contribuição</a> • 
- <a href="#licenc-a">Licença</a> • 
  <a href="#autor">Autor</a>
 </p>
 
@@ -16,5 +13,47 @@
 	🚧  Zabbix Extractor 🚀 Em construção...  🚧
 </h4>
 
-#Objetivo
-dquwahduahwd
+<!--ts-->
+# sobre
+a
+
+a
+
+a
+
+a
+
+a
+
+a
+
+a
+
+a
+
+a
+
+a
+
+a
+
+a
+
+a
+
+a
+
+# objetivo
+b
+b
+b
+b
+b
+b
+b
+b
+
+bb
+b
+
+<!--te-->
