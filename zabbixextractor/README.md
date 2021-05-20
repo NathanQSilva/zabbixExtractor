@@ -43,6 +43,8 @@
 # Autor
 <!--te-->
 <p>Meu nome é Nathan Quadros, tenho 22 anos, estudo desenvolvimento Backend a 6 anos e monitoramento a 3 anos, tenho interesse em aprender mais sobre Frontend e deixar minha contribuição para toda a comunidade de monitoramento com relatórios completos.</p>
+<!--ts-->
 [![Linkedin Badge](https://img.shields.io/badge/-Thiago-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/nathanqsilva/)](https://www.linkedin.com/in/nathanqsilva/)
+<!--te-->
 
 <p align="center"></p>
