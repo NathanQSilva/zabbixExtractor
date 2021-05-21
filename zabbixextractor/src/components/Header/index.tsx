@@ -22,25 +22,43 @@ export function Head({children}: headerProps) {
         <div>
             <div className={styles.homeHeader}>
                 <div className={styles.dashOptions}>
-                    <button>
+                    <button
+                        type="button"
+                        onClick={() => Router.push('/home/dashboard')}
+                    >
                         Dashboard
                     </button>
-                    <button>
+
+                    <button
+                        type="button"
+                        onClick={() => Router.push('/home/reports')}
+                    >
                         Reports
                     </button>
-                    <button>
+
+                    <button
+                        type="button"
+                        onClick={() => Router.push('/home/templates')}
+                    >
                         Templates
                     </button>
                 </div>
                 <div className={styles.userOptions}>
-                    <button>
+                    <button
+                        type="button"
+                        onClick={() => Router.push('https://github.com/NathanQSilva/zabbixExtractor/blob/main/zabbixextractor/README.md')}
+                    >
                         <img 
                             src="/info.png" 
                             alt="Informações" 
                             width="30"
                         />
                     </button>
-                    <button>
+
+                    <button
+                        type="button"
+                        onClick={() => Router.push('/home/conf')}
+                    >
                         <img 
                             src="/config.png" 
                             alt="Informações" 

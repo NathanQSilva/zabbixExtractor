@@ -58,6 +58,7 @@ export default function homePage() {
     return (
         <Head>
             <div>
+                HOME
             </div>
         </Head>
     )
