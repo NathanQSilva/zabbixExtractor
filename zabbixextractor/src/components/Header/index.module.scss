@@ -1,7 +1,7 @@
 .homeHeader {
     width: 100%;
     height: 40px;
-    background: #1a7f81;
+    background: #4DC7F0;
     color: white;
     
     display: flex;
@@ -15,18 +15,18 @@
         border: 0;
         margin: 5px 10px;
 
-        transition: filter 0.3s;
+        transition: backgroud 0.1s;
     }
 
     .dashOptions {
         width: 600px;
 
         button {
-            color: var(--gray-800);
+            color: white;
+            background-color: #3390AF;
 
             &:hover {
-                filter: brightness(0.9);
-
+                background: #23748f;
             }
         }
 

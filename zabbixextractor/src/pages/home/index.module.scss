@@ -1,0 +1,42 @@
+.homeContainer {
+    display: block;
+
+    width: 100vw;
+    height: 96vh;
+
+    background: #ccf1fd;
+
+    .dashTop {
+        height: 30vh;
+    }
+
+    .dashLineTop {
+        display: flex;
+        height: 33vh;
+
+        .topLeft {
+            height: 100%;
+            width: 50%;
+        }
+
+        .topRight {
+            height: 100%;
+            width: 50%;
+        }
+    }
+
+    .dashLineBottom {
+        display: flex;
+        height: 33vh;
+
+        .bottomLeft {
+            height: 100%;
+            width: 50%;
+        }
+
+        .bottomRight {
+            height: 100%;
+            width: 50%;
+        }
+    }
+}

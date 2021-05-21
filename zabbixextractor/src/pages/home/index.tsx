@@ -1,64 +1,75 @@
 // External imports
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { XYPlot, LineSeries, VerticalGridLines, HorizontalGridLines, XAxis, YAxis } from 'react-vis';
 import '../../../node_modules/react-vis/dist/style.css';
-import axios from 'axios';
 
 // Internal imports
-import { useLogin } from "../../contexts/LoginContext";
+import { useRequests } from "../../contexts/RequestsContext"
 import { Head } from '../../components/Header/index';
+import styles from './index.module.scss'
 
 export default function homePage() {
     const {
-        zabbixKey,
-        zabbixServer,
-    } = useLogin()
+        HistoryGet,
+        dados
+    } = useRequests()
 
-    const [ data, setData ] = useState([])
-
-    function convertData(arr) {
-        return arr.map( obj => {
-            return {
-                x: obj.clock,
-                y: obj.value
-            };
-        });
-    }
-
-    function HistoryGet() {
-        axios({
-            url: zabbixServer,
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/json"
-            },
-            data: JSON.stringify({
-                "jsonrpc": "2.0",
-                "method": "history.get",
-                "params": {
-                    "output": [
-                                "clock",
-                                "value"
-                            ],
-                    "history": 0,
-                    "itemids": "29177",
-                    "sortfield": "clock",
-                    "sortorder": "DESC",
-                    "limit": 10000
-                },
-                "auth": zabbixKey,
-                "id": 1
-            })
-        })
-        .then((response) => {
-            setData(convertData(response.data.result))
-        })
-    }
+    useEffect(() => {
+        HistoryGet
+    })
 
     return (
         <Head>
-            <div>
-                HOME
+            <div className={styles.homeContainer}>
+                <div className={styles.dashTop}>
+                    <XYPlot height={300} width= {300}>
+                        <VerticalGridLines />
+                        <HorizontalGridLines />
+                        <XAxis />
+                        <YAxis />
+                        <LineSeries data={dados} />
+                    </XYPlot>
+                </div>
+                <div className={styles.dashLineTop}>
+                    <div className={styles.topLeft}>
+                        <XYPlot height={300} width= {300}>
+                            <VerticalGridLines />
+                            <HorizontalGridLines />
+                            <XAxis />
+                            <YAxis />
+                            <LineSeries data={dados} />
+                        </XYPlot>
+                    </div>
+                    <div className={styles.topRight}>
+                        <XYPlot height={300} width= {300}>
+                            <VerticalGridLines />
+                            <HorizontalGridLines />
+                            <XAxis />
+                            <YAxis />
+                            <LineSeries data={dados} />
+                        </XYPlot>
+                    </div>
+                </div>
+                <div className={styles.dashLineBottom}>
+                    <div className={styles.bottomLeft}>
+                        <XYPlot height={300} width= {300}>
+                            <VerticalGridLines />
+                            <HorizontalGridLines />
+                            <XAxis />
+                            <YAxis />
+                            <LineSeries data={dados} />
+                        </XYPlot>
+                    </div>
+                    <div className={styles.bottomRight}>
+                        <XYPlot height={300} width= {300}>
+                            <VerticalGridLines />
+                            <HorizontalGridLines />
+                            <XAxis />
+                            <YAxis />
+                            <LineSeries data={dados} />
+                        </XYPlot>
+                    </div>
+                </div>
             </div>
         </Head>
     )

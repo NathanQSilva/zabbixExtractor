@@ -3,14 +3,17 @@ import '../styles/globals.scss'
 
 // Internal imports
 import { LoginContextProvider } from '../contexts/LoginContext';
+import { RequestsContextProvider } from '../contexts/RequestsContext';
 import { SignupForm } from '../pages/index';
 
 function MyApp({ Component, pageProps }) {
   return (
     <LoginContextProvider >
-      <Component >
-        <SignupForm />
-      </Component>
+      <RequestsContextProvider >
+        <Component >
+          <SignupForm />
+        </Component>
+      </RequestsContextProvider>
     </LoginContextProvider> 
   )
 }
