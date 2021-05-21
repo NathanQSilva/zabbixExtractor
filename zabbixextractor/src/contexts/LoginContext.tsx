@@ -1,6 +1,7 @@
 //// External imports
 import axios from 'axios';
 import { createContext, useState, ReactNode, useContext } from 'react';
+import Router from 'next/router';
 
 //// Types
 // Type for data in login process 
@@ -13,6 +14,7 @@ type valuesData = {
 // Type for all exports of context
 type LoginContextData = {
     GetLoginKey: (formValues: valuesData) => void;
+    LogOut: () => void;
     zabbixKey: string;
     zabbixServer: string;
     saved: boolean;
@@ -31,6 +33,13 @@ export function LoginContextProvider({ children }: LoginContextProviderProps) {
     const [ zabbixKey, setZabbixKey ] = useState('')
     const [ zabbixServer, setZabbixServer ] = useState('')
     const [ saved, setSaved ] = useState(false)
+
+    function LogOut() {
+        setSaved(false),
+        setZabbixKey(''),
+        setZabbixServer(''),
+        Router.push('/')
+    }
 
     function GetLoginKey(formValues: valuesData) {
         axios({
@@ -64,6 +73,7 @@ export function LoginContextProvider({ children }: LoginContextProviderProps) {
                 zabbixKey,
                 zabbixServer,
                 saved,
+                LogOut,
             }}
         >
             {children}

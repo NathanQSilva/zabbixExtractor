@@ -1,16 +1,23 @@
 // External imports
-import { ReactNode } from "react"
+import { ReactNode } from "react";
+import Router from 'next/router';
 
 // Internal imports
+import { useLogin } from "../../contexts/LoginContext";
 
 // Styles imports
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
+// Types
 type headerProps = {
     children: ReactNode;
 }
 
 export function Head({children}: headerProps) {
+    const {
+        LogOut
+    } = useLogin()
+
     return (
         <div>
             <div className={styles.homeHeader}>
@@ -40,7 +47,10 @@ export function Head({children}: headerProps) {
                             width="30"
                         />
                     </button>
-                    <button>
+                    <button
+                        type="button"
+                        onClick={LogOut}
+                    >
                         <img 
                             src="/exit.png" 
                             alt="Informações"

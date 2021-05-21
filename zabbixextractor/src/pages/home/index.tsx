@@ -8,7 +8,7 @@ import axios from 'axios';
 import { useLogin } from "../../contexts/LoginContext";
 import { Head } from '../../components/Header/index';
 
-export default function loginPage() {
+export default function homePage() {
     const {
         zabbixKey,
         zabbixServer,
@@ -58,19 +58,6 @@ export default function loginPage() {
     return (
         <Head>
             <div>
-                <button onClick={HistoryGet}>
-                    Chamada
-                </button>
-                <p>
-                    {zabbixServer}
-                </p>
-                <XYPlot height={720} width= {1080}>
-                    <VerticalGridLines />
-                    <HorizontalGridLines />
-                    <XAxis />
-                    <YAxis />
-                    <LineSeries data={data} />
-                </XYPlot>
             </div>
         </Head>
     )

@@ -1,6 +1,7 @@
 //// External imports
 import React from 'react';
 import { useFormik } from 'formik';
+import Router from 'next/router';
 
 //// Internal imports
 // Import of context login
@@ -30,10 +31,6 @@ export function SignupForm() {
       GetLoginKey(values)
     },
   });
-
-  function goHome() {
-    window.location.href = "/home"
-  }
 
   // Html of login page
   return (
@@ -71,9 +68,10 @@ export function SignupForm() {
         <div className={styles.loginButton}>
           <button type="submit" className={styles.saveButton}>Save options</button>
           <button
+            type="button"
             className={styles.enterButton} 
             disabled={saved == false}
-            onClick={goHome}
+            onClick={() => Router.push('/home')}
           >
             Enter
           </button>
