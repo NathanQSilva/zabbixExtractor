@@ -1,6 +1,6 @@
 // External imports
 import React, { useEffect } from 'react';
-import { XYPlot, LineSeries, VerticalGridLines, HorizontalGridLines, XAxis, YAxis } from 'react-vis';
+import { XYPlot, LineSeries, MarkSeries, VerticalGridLines, HorizontalGridLines, XAxis, YAxis } from 'react-vis';
 import '../../../node_modules/react-vis/dist/style.css';
 
 // Internal imports
@@ -11,23 +11,21 @@ import styles from './index.module.scss'
 export default function homePage() {
     const {
         HistoryGet,
-        dados
+        rawData
     } = useRequests()
 
     useEffect(() => {
-        HistoryGet
+        HistoryGet()
     })
 
     return (
         <Head>
             <div className={styles.homeContainer}>
                 <div className={styles.dashTop}>
-                    <XYPlot height={300} width= {300}>
-                        <VerticalGridLines />
-                        <HorizontalGridLines />
+                    <XYPlot height={280} width= {1500}>
                         <XAxis />
                         <YAxis />
-                        <LineSeries data={dados} />
+                        <LineSeries data={rawData} />
                     </XYPlot>
                 </div>
                 <div className={styles.dashLineTop}>
@@ -37,7 +35,7 @@ export default function homePage() {
                             <HorizontalGridLines />
                             <XAxis />
                             <YAxis />
-                            <LineSeries data={dados} />
+                            <LineSeries data={rawData} />
                         </XYPlot>
                     </div>
                     <div className={styles.topRight}>
@@ -46,7 +44,7 @@ export default function homePage() {
                             <HorizontalGridLines />
                             <XAxis />
                             <YAxis />
-                            <LineSeries data={dados} />
+                            <LineSeries data={rawData} />
                         </XYPlot>
                     </div>
                 </div>
@@ -57,7 +55,7 @@ export default function homePage() {
                             <HorizontalGridLines />
                             <XAxis />
                             <YAxis />
-                            <LineSeries data={dados} />
+                            <LineSeries data={rawData} />
                         </XYPlot>
                     </div>
                     <div className={styles.bottomRight}>
@@ -66,7 +64,7 @@ export default function homePage() {
                             <HorizontalGridLines />
                             <XAxis />
                             <YAxis />
-                            <LineSeries data={dados} />
+                            <LineSeries data={rawData} />
                         </XYPlot>
                     </div>
                 </div>

@@ -14,7 +14,7 @@ type dataChart = {
 // Type for all exports of context
 type RequestsContextData = {
     HistoryGet:  () => void;
-    dados: dataChart[];
+    rawData: dataChart[];
 }
 
 //Type for context access in all code
@@ -27,7 +27,7 @@ export const RequestsContext = createContext({} as RequestsContextData);
 
 // Creation of consts and functions shared
 export function RequestsContextProvider({ children }: RequestsContextProviderProps) {
-    const [ dados, setDados ] = useState([])
+    const [ rawData, setRawData ] = useState([])
 
     const {
         zabbixKey,
@@ -45,7 +45,7 @@ export function RequestsContextProvider({ children }: RequestsContextProviderPro
 
     function HistoryGet() {
         axios({
-            url: 'http://172.16.174.150/api_jsonrpc.php',//zabbixServer,
+            url: 'http://172.16.174.150/api_jsonrpc.php',//zabbixServer,//
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
@@ -62,14 +62,14 @@ export function RequestsContextProvider({ children }: RequestsContextProviderPro
                     "itemids": "29177",
                     "sortfield": "clock",
                     "sortorder": "DESC",
-                    "limit": 10
+                    "limit": 10000
                 },
-                "auth": '779c894ba3f23cd4c6769bd47cb61ce5',//zabbixKey,
+                "auth": 'e3be3df106da2071fb46aee4c47cfb0a',//zabbixKey,//
                 "id": 1
             })
         })
         .then((response) => {
-            setDados(convertData(response.data.result))
+            setRawData(convertData(response.data.result))
         })
     }
 
@@ -77,7 +77,7 @@ export function RequestsContextProvider({ children }: RequestsContextProviderPro
         <RequestsContext.Provider
             value = {{
                 HistoryGet,
-                dados,
+                rawData,
             }}
         >
             {children}
