@@ -37,9 +37,18 @@ export function RequestsContextProvider({ children }: RequestsContextProviderPro
         });
     }
 
+    function DecryptData(data: string) {
+        var CryptoJS = require("crypto-js");
+
+        var bytes = CryptoJS.AES.decrypt(data, 'Z@bb1x3xtr@ct0r');
+        var dataDecrypted = bytes.toString(CryptoJS.enc.Utf8);
+
+        return (dataDecrypted)
+    }
+
     function HistoryGet() {
         axios({
-            url: sessionStorage.getItem("zabbixServer"),//zabbixServer,//
+            url: DecryptData(sessionStorage.getItem("zabbixServer")),//zabbixServer,//
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
@@ -58,7 +67,7 @@ export function RequestsContextProvider({ children }: RequestsContextProviderPro
                     "sortorder": "DESC",
                     "limit": 10000
                 },
-                "auth": sessionStorage.getItem("zabbixKey"),//zabbixKey,//
+                "auth": DecryptData(sessionStorage.getItem("zabbixKey")),//zabbixKey,//
                 "id": 1
             })
         })
