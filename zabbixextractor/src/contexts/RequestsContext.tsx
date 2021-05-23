@@ -3,7 +3,6 @@ import axios from 'axios';
 import { createContext, useState, ReactNode, useContext } from 'react';
 
 //// Internal imports
-import { useLogin } from './LoginContext';
 
 //// Types
 type dataChart = {
@@ -29,11 +28,6 @@ export const RequestsContext = createContext({} as RequestsContextData);
 export function RequestsContextProvider({ children }: RequestsContextProviderProps) {
     const [ rawData, setRawData ] = useState([])
 
-    const {
-        zabbixKey,
-        zabbixServer,
-    } = useLogin()
-
     function convertData(arr) {
         return arr.map( obj => {
             return {
@@ -45,7 +39,7 @@ export function RequestsContextProvider({ children }: RequestsContextProviderPro
 
     function HistoryGet() {
         axios({
-            url: 'http://172.16.174.150/api_jsonrpc.php',//zabbixServer,//
+            url: sessionStorage.getItem("zabbixServer"),//zabbixServer,//
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
@@ -64,7 +58,7 @@ export function RequestsContextProvider({ children }: RequestsContextProviderPro
                     "sortorder": "DESC",
                     "limit": 10000
                 },
-                "auth": 'e3be3df106da2071fb46aee4c47cfb0a',//zabbixKey,//
+                "auth": sessionStorage.getItem("zabbixKey"),//zabbixKey,//
                 "id": 1
             })
         })

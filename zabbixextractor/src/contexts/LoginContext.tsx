@@ -15,8 +15,6 @@ type valuesData = {
 type LoginContextData = {
     GetLoginKey: (formValues: valuesData) => void;
     LogOut: () => void;
-    zabbixKey: string;
-    zabbixServer: string;
     saved: boolean;
 }
 
@@ -30,14 +28,12 @@ export const LoginContext = createContext({} as LoginContextData);
 
 // Creation of consts and functions shared
 export function LoginContextProvider({ children }: LoginContextProviderProps) {
-    const [ zabbixKey, setZabbixKey ] = useState('')
-    const [ zabbixServer, setZabbixServer ] = useState('')
     const [ saved, setSaved ] = useState(false)
 
     function LogOut() {
         setSaved(false),
-        setZabbixKey(''),
-        setZabbixServer(''),
+        sessionStorage.removeItem("zabbixKey")
+        sessionStorage.removeItem("zabbixServer")
         Router.push('/')
     }
 
@@ -60,9 +56,9 @@ export function LoginContextProvider({ children }: LoginContextProviderProps) {
             })
         })
         .then((response) => {
-                setZabbixKey(response.data.result)
-                setSaved(true)
-                setZabbixServer(formValues.server) 
+            sessionStorage.setItem("zabbixKey", response.data.result)
+            setSaved(true)
+            sessionStorage.setItem("zabbixServer", formValues.server)
         })
     }
 
@@ -70,8 +66,6 @@ export function LoginContextProvider({ children }: LoginContextProviderProps) {
         <LoginContext.Provider
             value = {{
                 GetLoginKey,
-                zabbixKey,
-                zabbixServer,
                 saved,
                 LogOut,
             }}
