@@ -30,6 +30,8 @@ export const LoginContext = createContext({} as LoginContextData);
 export function LoginContextProvider({ children }: LoginContextProviderProps) {
     const [ saved, setSaved ] = useState(false)
 
+    var CryptoJS = require("crypto-js");
+
     function LogOut() {
         setSaved(false),
         sessionStorage.removeItem("zabbixKey")
@@ -56,9 +58,9 @@ export function LoginContextProvider({ children }: LoginContextProviderProps) {
             })
         })
         .then((response) => {
-            sessionStorage.setItem("zabbixKey", response.data.result)
+            sessionStorage.setItem("zabbixKey", CryptoJS.AES.encrypt(response.data.result, 'Z@bb1x3xtr@ct0r').toString())
             setSaved(true)
-            sessionStorage.setItem("zabbixServer", formValues.server)
+            sessionStorage.setItem("zabbixServer", CryptoJS.AES.encrypt(formValues.server, 'Z@bb1x3xtr@ct0r').toString())
         })
     }
 
