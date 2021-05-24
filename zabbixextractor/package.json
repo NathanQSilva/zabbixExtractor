@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "chart.js": "^3.3.0",
     "crypto-js": "^4.0.0",
     "formik": "^2.2.6",
     "next": "10.2.0",
