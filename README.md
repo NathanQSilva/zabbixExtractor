@@ -41,7 +41,7 @@
 </p>
 <!--ts-->
 ```npm
-sudo apt-get install curl
+	sudo apt-get install curl
 ```
 <!--te-->
 
