@@ -1,71 +1,43 @@
 // External imports
 import React, { useEffect } from 'react';
-import { XYPlot, LineSeries, MarkSeries, VerticalGridLines, HorizontalGridLines, XAxis, YAxis } from 'react-vis';
-import '../../../node_modules/react-vis/dist/style.css';
 
 // Internal imports
 import { useRequests } from "../../contexts/RequestsContext"
 import { Head } from '../../components/Header/index';
 import styles from './index.module.scss'
 
+import Chart from '../../components/charts/chart'
+
 export default function homePage() {
+    useEffect(() => {
+        HistoryGet()
+    })
+
     const {
         HistoryGet,
         rawData
     } = useRequests()
 
-    useEffect(() => {
-        HistoryGet()
-    })
-
     return (
         <Head>
             <div className={styles.homeContainer}>
                 <div className={styles.dashTop}>
-                    <XYPlot height={280} width= {1500}>
-                        <XAxis />
-                        <YAxis />
-                        <LineSeries data={rawData} />
-                    </XYPlot>
+                    <Chart />
                 </div>
                 <div className={styles.dashLineTop}>
                     <div className={styles.topLeft}>
-                        <XYPlot height={300} width= {300}>
-                            <VerticalGridLines />
-                            <HorizontalGridLines />
-                            <XAxis />
-                            <YAxis />
-                            <LineSeries data={rawData} />
-                        </XYPlot>
+                        teste
                     </div>
                     <div className={styles.topRight}>
-                        <XYPlot height={300} width= {300}>
-                            <VerticalGridLines />
-                            <HorizontalGridLines />
-                            <XAxis />
-                            <YAxis />
-                            <LineSeries data={rawData} />
-                        </XYPlot>
+                        teste 2                        
                     </div>
                 </div>
                 <div className={styles.dashLineBottom}>
                     <div className={styles.bottomLeft}>
-                        <XYPlot height={300} width= {300}>
-                            <VerticalGridLines />
-                            <HorizontalGridLines />
-                            <XAxis />
-                            <YAxis />
-                            <LineSeries data={rawData} />
-                        </XYPlot>
+                        teste 3
                     </div>
                     <div className={styles.bottomRight}>
-                        <XYPlot height={300} width= {300}>
-                            <VerticalGridLines />
-                            <HorizontalGridLines />
-                            <XAxis />
-                            <YAxis />
-                            <LineSeries data={rawData} />
-                        </XYPlot>
+                        teste 4
                     </div>
                 </div>
             </div>

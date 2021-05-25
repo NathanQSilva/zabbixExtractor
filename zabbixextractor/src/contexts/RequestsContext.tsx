@@ -48,7 +48,7 @@ export function RequestsContextProvider({ children }: RequestsContextProviderPro
 
     function HistoryGet() {
         axios({
-            url: DecryptData(sessionStorage.getItem("zabbixServer")),//zabbixServer,//
+            url: sessionStorage.getItem("zabbixServer"),//zabbixServer,//
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
@@ -67,12 +67,12 @@ export function RequestsContextProvider({ children }: RequestsContextProviderPro
                     "sortorder": "DESC",
                     "limit": 10000
                 },
-                "auth": DecryptData(sessionStorage.getItem("zabbixKey")),//zabbixKey,//
+                "auth": sessionStorage.getItem("zabbixKey"),//zabbixKey,//
                 "id": 1
             })
         })
         .then((response) => {
-            setRawData(convertData(response.data.result))
+            convertData(response.data.result)
         })
     }
 
