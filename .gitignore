@@ -11,6 +11,8 @@ node_modules
 # next.js
 .next/
 .next/cache/
+next-env.d.ts
+
 # production
 /build
 
