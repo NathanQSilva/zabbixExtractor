@@ -58,9 +58,9 @@ export function LoginContextProvider({ children }: LoginContextProviderProps) {
             })
         })
         .then((response) => {
-            sessionStorage.setItem("zabbixKey", CryptoJS.AES.encrypt(response.data.result, 'Z@bb1x3xtr@ct0r').toString())
+            sessionStorage.setItem("zabbixKey",response.data.result)
             setSaved(true)
-            sessionStorage.setItem("zabbixServer", CryptoJS.AES.encrypt(formValues.server, 'Z@bb1x3xtr@ct0r').toString())
+            sessionStorage.setItem("zabbixServer", formValues.server,)
         })
     }
 
