@@ -19,13 +19,19 @@
         height: 33vh;
 
         .topLeft {
-            height: 100%;
-            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 100%;
         }
 
         .topRight {
-            height: 100%;
-            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 100%;
         }
     }
 
@@ -34,13 +40,19 @@
         height: 33vh;
 
         .bottomLeft {
-            height: 100%;
-            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 100%;
         }
 
         .bottomRight {
-            height: 100%;
-            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 100%;
         }
     }
 }
