@@ -40,7 +40,7 @@
 	Para instalação 
 </p>
 <!--ts-->
-```bash
+```npm
 sudo apt-get install curl
 ```
 <!--te-->
