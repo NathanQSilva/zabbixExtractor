@@ -1,85 +1,80 @@
 .indexPage {
+  display: flex;
+  justify-content: center;
+  margin-top: 7%;
+
+  .loginFormContainer {
+    background: var(--white);
+    border: 1px solid var(--gray-500);
+    border-radius: 7px;
+    padding-bottom: 1rem;
+
     display: flex;
-    justify-content: center;
-    margin-top: 7%;
+    flex-direction: column;
+    width: 25rem;
 
-    .loginFormContainer {
-        background: var(--white);
-        border: 1px solid var(--gray-500);
-        border-radius: 7px;
-        padding-bottom: 1rem;
-    
-        display: flex;
-        flex-direction: column;
-        width: 25rem;
-    
-        .loginLogo {
-            padding-top: 1.25rem;
-            margin: 0 auto;
-        }
-    
-        .loginData {
-            margin: 1rem;
-            
-            label {
-                color: var(--gray-800);
-            }
-
-            input {
-                margin-top: 0.3rem;
-                margin-bottom: 1rem;
-
-                height: 2.2rem;
-                width: 100%;
-            }
-        }
-
-        .loginButton {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-
-            .saveButton {
-                height: 2.1rem;
-                width: 9rem;
-                border-radius: 15px;
-                border: 0;
-
-                color: white;
-                background: var(--purple-800);
-
-                transition: filter 0.2s;
-
-                &:hover:not(:disabled) {
-                    filter: brightness(0.7);
-                }
-
-            }
-
-            .enterButton {
-                height: 2.1rem;
-                width: 9rem;
-                border-radius: 15px;
-                border: 0;
-
-                color: white;
-                background: var(--green-500);
-
-                transition: filter 0.2s;
-
-                &:disabled {
-                    background: var(--red-500);
-                    cursor: default;
-                }
-
-                &:hover:not(:disabled) {
-                    filter: brightness(0.7);
-                }
-            }
-
-            
-        }
+    .loginLogo {
+      padding-top: 1.25rem;
+      margin: 0 auto;
     }
+
+    .loginData {
+      margin: 1rem;
+
+      label {
+        color: var(--gray-800);
+      }
+
+      input {
+        margin-top: 0.3rem;
+        margin-bottom: 1rem;
+
+        height: 2.2rem;
+        width: 100%;
+      }
+    }
+
+    .loginButton {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+
+      .saveButton {
+        height: 2.1rem;
+        width: 9rem;
+        border-radius: 15px;
+        border: 0;
+
+        color: white;
+        background: var(--purple-800);
+
+        transition: filter 0.2s;
+
+        &:hover:not(:disabled) {
+          filter: brightness(0.7);
+        }
+      }
+
+      .enterButton {
+        height: 2.1rem;
+        width: 9rem;
+        border-radius: 15px;
+        border: 0;
+
+        color: white;
+        background: var(--green-500);
+
+        transition: filter 0.2s;
+
+        &:disabled {
+          background: var(--red-500);
+          cursor: default;
+        }
+
+        &:hover:not(:disabled) {
+          filter: brightness(0.7);
+        }
+      }
+    }
+  }
 }
-
-
