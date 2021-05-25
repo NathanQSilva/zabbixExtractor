@@ -39,9 +39,11 @@
 <p>
 	Para instalação 
 </p>
-```bash
+<!--ts-->
+```
 sudo apt-get install curl
 ```
+<!--te-->
 
 sudo apt-get install curl
 
