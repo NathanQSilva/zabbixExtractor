@@ -27,13 +27,47 @@
 - [React](https://pt-br.reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Next](https://nextjs.org/)
-- [React-vis](https://uber.github.io/react-vis/)
+- [chart.js](https://www.chartjs.org/)
+- [react-chartjs-2](https://github.com/reactchartjs/react-chartjs-2)
+- [react-grid-layout](https://github.com/react-grid-layout/react-grid-layout)
 <!--te-->
 
 
 <!--ts-->
 # Instalação
 <!--te-->
+<p>
+	Para instalação 
+</p>
+```bash
+sudo apt-get install curl
+```
+
+sudo apt-get install curl
+
+# Usando Ubuntu
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+sudo apt-get install -y nodejs
+# Usando Debian, como root
+curl -sL https://deb.nodesource.com/setup_14.x | bash -
+apt-get install -y nodejs
+
+node -v
+npm -v
+
+sudo npm install --global yarn
+
+yarn -v
+
+git clone https://github.com/NathanQSilva/zabbixExtractor
+
+cd zabbixExtractor
+
+npm install
+
+yarn build
+
+yarn start
 
 <!--ts-->
 # Como usar
