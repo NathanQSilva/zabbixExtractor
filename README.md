@@ -127,10 +127,12 @@ Com tudo isso pronto podemos acessar aplicação através do link: http://ENDERE
  	<img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/77071315?v=4" width="100px;" alt="" align="center"/>
  	<br />
  	<sub><b>Antonio Lourenço</b></sub></a><br><br><br>
-	
-	 Feito com ❤️ pela equipe de zabbixExtractor 👋🏽 Entre em contato!<br>
 </div>
 
+
+<h3 align="center">
+    Feito com ❤️ pela equipe de zabbixExtractor 👋🏽 Entre em contato!
+</h3>
 
 
 
