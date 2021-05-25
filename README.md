@@ -39,11 +39,11 @@
 <p>
 	Para instalação 
 </p>
-<!--ts-->
+
 ```npm
 	sudo apt-get install curl
 ```
-<!--te-->
+
 
 sudo apt-get install curl
 
