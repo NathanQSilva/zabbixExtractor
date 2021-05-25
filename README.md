@@ -73,7 +73,7 @@ yarn -v
 ```
 
 <p>
-Na pasta em que voce deseja instalar o projeto clone o projeto
+Na pasta em que voce deseja instalar o projeto clone o projeto:
 </p>
 
 ```npm
