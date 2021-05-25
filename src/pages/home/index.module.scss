@@ -1,58 +1,55 @@
 .homeContainer {
-    display: block;
+  display: block;
 
-    width: 100vw;
-    height: 96vh;
+  background: #ccf1fd;
 
-    background: #ccf1fd;
+  .dashTop {
+    height: 30vh;
 
-    .dashTop {
-        height: 30vh;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+  }
 
-        display: flex;
-        justify-content: center;
-        padding-top: 10px;    
+  .dashLineTop {
+    display: flex;
+    height: 33vh;
+
+    .topLeft {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 100%;
     }
 
-    .dashLineTop {
-        display: flex;
-        height: 33vh;
+    .topRight {
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-        .topLeft {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+      width: 100%;
+    }
+  }
 
-            width: 100%;
-        }
+  .dashLineBottom {
+    display: flex;
+    height: 33vh;
 
-        .topRight {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+    .bottomLeft {
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-            width: 100%;
-        }
+      width: 100%;
     }
 
-    .dashLineBottom {
-        display: flex;
-        height: 33vh;
+    .bottomRight {
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-        .bottomLeft {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            width: 100%;
-        }
-
-        .bottomRight {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            width: 100%;
-        }
+      width: 100%;
     }
+  }
 }

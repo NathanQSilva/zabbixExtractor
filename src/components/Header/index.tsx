@@ -1,85 +1,96 @@
 // External imports
 import { ReactNode } from "react";
-import Router from 'next/router';
+import Router from "next/router";
 
 // Internal imports
 import { useLogin } from "../../contexts/LoginContext";
 
 // Styles imports
-import styles from './index.module.scss';
+import styles from "./index.module.scss";
 
 // Types
 type headerProps = {
-    children: ReactNode;
-}
+  children: ReactNode;
+};
 
-export function Head({children}: headerProps) {
-    const {
-        LogOut
-    } = useLogin()
+export function Head({ children }: headerProps) {
+  const { LogOut } = useLogin();
 
-    return (
-        <div>
-            <div className={styles.homeHeader}>
-                <div className={styles.dashOptions}>
-                    <button
-                        type="button"
-                        onClick={() => Router.push('/home/dashboard')}
-                    >
-                        Dashboard
-                    </button>
+  const optionDashBoard = [
+    {
+      name: "Home",
+      img: "",
+      url: "/home",
+    },
+    {
+      name: "Dashboard",
+      img: "",
+      url: "/home/dashboard",
+    },
+    {
+      name: "Reports",
+      img: "",
+      url: "/home/reports",
+    },
+    {
+      name: "Templates",
+      img: "",
+      url: "/home/templates",
+    },
+  ];
 
-                    <button
-                        type="button"
-                        onClick={() => Router.push('/home/reports')}
-                    >
-                        Reports
-                    </button>
+  const optionSettings = [
+    {
+      name: "Visit",
+      img: "",
+      url: "https://github.com/NathanQSilva/zabbixExtractor/blob/main/README.md",
+    },
+    {
+      name: "Settings",
+      img: "",
+      url: "/home/conf",
+    },
+  ];
 
-                    <button
-                        type="button"
-                        onClick={() => Router.push('/home/templates')}
-                    >
-                        Templates
-                    </button>
-                </div>
-                <div className={styles.userOptions}>
-                    <button
-                        type="button"
-                        onClick={() => Router.push('https://github.com/NathanQSilva/zabbixExtractor/blob/main/zabbixextractor/README.md')}
-                    >
-                        <img 
-                            src="/info.png" 
-                            alt="Informações" 
-                            width="30"
-                        />
-                    </button>
+  const handleClick = (url: string) => {
+    return Router.push(url);
+  };
 
-                    <button
-                        type="button"
-                        onClick={() => Router.push('/home/conf')}
-                    >
-                        <img 
-                            src="/config.png" 
-                            alt="Informações" 
-                            width="30"
-                        />
-                    </button>
-                    <button
-                        type="button"
-                        onClick={LogOut}
-                    >
-                        <img 
-                            src="/exit.png" 
-                            alt="Informações"
-                            width="30"
-                        />
-                    </button>
-                </div>
-            </div>
-            <div>
-                {children}
-            </div>
+  return (
+    <div>
+      <div className={styles.header}>
+        <div className={styles.options}>
+          {optionDashBoard.map((item, index) => {
+            return (
+              <div
+                className={styles.option}
+                key={index}
+                onClick={() => handleClick(item.url)}
+              >
+                <span>{item.name}</span>
+              </div>
+            );
+          })}
         </div>
-    )
+
+        <div className={styles.options}>
+          {optionSettings.map((item, index) => {
+            return (
+              <div
+                className={styles.option}
+                key={index}
+                onClick={() => handleClick(item.url)}
+              >
+                <span>{item.name}</span>
+              </div>
+            );
+          })}
+          <div className={styles.option} onClick={LogOut}>
+            <span>Logout</span>
+          </div>
+        </div>
+      </div>
+      <div>{children}</div>
+    </div>
+  );
 }
