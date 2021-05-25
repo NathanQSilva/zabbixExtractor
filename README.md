@@ -112,7 +112,6 @@ Com tudo isso pronto podemos acessar aplicação através do link: http://ENDERE
 <p>Meu nome é Nathan Quadros, tenho 22 anos, estudo desenvolvimento Backend a 6 anos e monitoramento a 3 anos, tenho interesse em aprender mais sobre Frontend e deixar minha contribuição para toda a comunidade de monitoramento com relatórios completos.</p>
 
 <div align="center">
-
 	<a href="https://github.com/NathanQSilva" align="center">
  	<img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/72088284?s=96&v=4" width="100px;" alt="" align="center"/>
  	<br />
@@ -124,7 +123,6 @@ Com tudo isso pronto podemos acessar aplicação através do link: http://ENDERE
 <!--te-->
 
 <div align="center">
-
 	<a href="https://github.com/AntonioLourencos" align="center">
  	<img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/77071315?v=4" width="100px;" alt="" align="center"/>
  	<br />
