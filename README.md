@@ -39,13 +39,15 @@
 <p>
 Para a instalação do projeto precisamos do comando curl, se não existe em seu computador instale com:
 </p>
+
 ```npm
 sudo apt-get install curl
 ```
 <p>
 Feito isso, instale o NodeJS na sua versão LTS com o seguinte comando:
 </p>
-```
+
+```npm
 # Usando Ubuntu
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt-get install -y nodejs
