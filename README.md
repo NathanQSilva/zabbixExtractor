@@ -51,26 +51,56 @@ Feito isso, instale o NodeJS na sua versão LTS com o seguinte comando:
 # Usando Ubuntu
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt-get install -y nodejs
+
 # Usando Debian, como root
 curl -sL https://deb.nodesource.com/setup_14.x | bash -
 apt-get install -y nodejs
-```
+
+# Cheque a instalação rodando
 node -v
 npm -v
+```
 
+<p>
+Com o node e npm instalados, constinue instalando o yarn com o comando:
+</p>
+
+```npm
 sudo npm install --global yarn
 
+# Cheque a instalação com
 yarn -v
+```
 
+<p>
+Na pasta em que voce deseja instalar o projeto clone o projeto
+</p>
+
+```npm
 git clone https://github.com/NathanQSilva/zabbixExtractor
 
+# Entre no diretório
 cd zabbixExtractor
 
+# Instale o projeto e suas dependências com
 npm install
+```
 
+<p>
+Feito isso podemos gerar uma build do projeto e executar da seguinte maneira:
+</p>
+
+```npm
+# Monte uma build
 yarn build
 
+# Inicie a aplicação
 yarn start
+```
+
+<p>
+Com tudo isso pronto podemos acessar aplicação através do link: http://ENDEREÇO_DO_SERVIDOR:3000
+</p>
 
 <!--ts-->
 # Como usar
