@@ -1,5 +1,6 @@
 //// External imports
-import { useFormik } from 'formik'
+import React from 'react';
+import { useFormik } from 'formik';
 
 // Internal imports
 import { Head } from '../../../components/Header/index';
@@ -12,20 +13,19 @@ export default function ConfigHome() {
 
     const formik = useFormik({
         initialValues: {
-          user: '', 
-          password: '',
-          server: '',
+            user: '',
+            password: '',
+            server: '',
         },
-    
-        // on submit the values are passed to the function saving only the key
+
         onSubmit: values => {
-          GetLoginKey(values)
+            GetLoginKey(values)
         },
     });
 
     return (
         <Head>
-            <div> 
+            <div>
                 <form onSubmit={formik.handleSubmit}>
                     <div>
                         <label>User</label>
