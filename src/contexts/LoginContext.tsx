@@ -2,6 +2,7 @@
 import axios from "axios";
 import { createContext, useState, ReactNode, useContext } from "react";
 import Router from "next/router";
+import { Alert, AlertTitle } from '@material-ui/lab';
 
 //// Types
 // Type for data in login process
@@ -15,7 +16,9 @@ type valuesData = {
 type LoginContextData = {
   GetLoginKey: (formValues: valuesData) => void;
   LogOut: () => void;
+  setIsError: (boolean) => void;
   saved: boolean;
+  isError: boolean;
 };
 
 //Type for context access in all code
@@ -29,6 +32,7 @@ export const LoginContext = createContext({} as LoginContextData);
 // Creation of consts and functions shared
 export function LoginContextProvider({ children }: LoginContextProviderProps) {
   const [saved, setSaved] = useState(false);
+  const [isError, setIsError ] = useState(false); 
 
   var CryptoJS = require("crypto-js");
 
@@ -55,11 +59,18 @@ export function LoginContextProvider({ children }: LoginContextProviderProps) {
         id: 1,
         auth: null,
       }),
-    }).then((response) => {
-      sessionStorage.setItem("zabbixKey", response.data.result);
-      setSaved(true);
-      sessionStorage.setItem("zabbixServer", formValues.server);
-    });
+    })
+    .then((response) => {
+      if (response.data.error) {
+        setIsError(true)
+      }
+      else {
+        sessionStorage.setItem("zabbixKey", response.data.result);
+        sessionStorage.setItem("zabbixServer", formValues.server);
+        setSaved(true);
+        setIsError(false);
+      }
+    })
   }
 
   return (
@@ -68,6 +79,8 @@ export function LoginContextProvider({ children }: LoginContextProviderProps) {
         GetLoginKey,
         saved,
         LogOut,
+        isError,
+        setIsError
       }}
     >
       {children}
