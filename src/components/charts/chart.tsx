@@ -21,7 +21,6 @@ function Chart(props) {
     return (
         <div className={styles.chart}>
             <Line
-                type={Line}
                 data={rawData}
                 options={{ maintainAspectRatio: false }} 
             />
