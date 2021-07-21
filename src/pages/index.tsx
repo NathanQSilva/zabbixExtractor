@@ -9,13 +9,17 @@ import { useLogin } from '../contexts/LoginContext';
 
 //// Imports of styles
 import styles from './index.module.scss'
-
+import { Alert, AlertTitle } from '@material-ui/lab';
+import { Collapse, IconButton } from '@material-ui/core';
+import CloseIcon from '@material-ui/icons/Close';
 
 export function SignupForm() {
   // consts imported of login context
   const {
     GetLoginKey,
-    saved
+    saved,
+    isError,
+    setIsError
   } = useLogin()
 
   // const for form with formik
@@ -77,7 +81,37 @@ export function SignupForm() {
           </button>
         </div>
       </form>
-    </div>
+        <Collapse in={isError}> 
+          <Alert 
+            action={
+              <IconButton
+                aria-label="close"
+                color="inherit"
+                size="small"
+                onClick={() => {
+                  setIsError(false)
+                }}
+              >
+                <CloseIcon fontSize="inherit"/>
+              </IconButton>
+            }
+            severity="error"
+          >
+            <AlertTitle>
+              Erro
+            </AlertTitle>
+            Algo deu errado! Verifique os dados do usuário.
+          </Alert>
+        </Collapse>
+        <Collapse in={saved}> 
+          <Alert>
+            <AlertTitle>
+              Sucesso
+            </AlertTitle>
+            Dados foram salvos com sucesso!!
+          </Alert>
+        </Collapse>
+      </div>
   );
 };
 

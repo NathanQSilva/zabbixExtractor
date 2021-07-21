@@ -1,6 +1,9 @@
 .indexPage {
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
   margin-top: 7%;
 
   .loginFormContainer {
@@ -12,6 +15,7 @@
     display: flex;
     flex-direction: column;
     width: 25rem;
+
 
     .loginLogo {
       padding-top: 1.25rem;
