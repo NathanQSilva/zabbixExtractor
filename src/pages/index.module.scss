@@ -1,84 +1,155 @@
 .indexPage {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+
+  background: linear-gradient(72.44deg, #000000, rgba(0, 0, 0, 0,) 100%), #29CDB5;
+  mix-blend-mode: normal;
+
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 
-  margin-top: 7%;
-
   .loginFormContainer {
-    background: var(--white);
-    border: 1px solid var(--gray-500);
-    border-radius: 7px;
-    padding-bottom: 1rem;
+    background: white;
+    border-radius: 15px;
+    position: absolute;
+
+    width: 60rem;
+    height: 42rem;
 
     display: flex;
-    flex-direction: column;
-    width: 25rem;
-
+    align-items: center;
+    justify-content: space-around;
 
     .loginLogo {
-      padding-top: 1.25rem;
-      margin: 0 auto;
+      img {
+        width: 25rem;
+        
+      }
     }
 
     .loginData {
-      margin: 1rem;
+      width: 25rem;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      h3 {
+        font-family: Roboto, sans-serif;
+        color: #373331;
+
+        font-size: 2rem;   
+        font-weight: bold;
+        
+        margin-bottom: 1.5rem;
+
+        filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.35));
+      }
 
       label {
-        color: var(--gray-800);
-      }
+        position: relative;
 
-      input {
-        margin-top: 0.3rem;
-        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
 
-        height: 2.2rem;
-        width: 100%;
-      }
-    }
+        width: 320px;
+        height: 40px;
+        background: #DFDFDF;
+        border-radius: 25px;
 
-    .loginButton {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-evenly;
+        margin: 0.5rem;
 
-      .saveButton {
-        height: 2.1rem;
-        width: 9rem;
-        border-radius: 15px;
-        border: 0;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
-        color: white;
-        background: var(--purple-800);
+        input {
+          height: 90%;
+          width: 85%;
+          background: transparent;
+          border: 0;
 
-        transition: filter 0.2s;
+          padding: 0 10px 0 15px;
 
-        &:hover:not(:disabled) {
-          filter: brightness(0.7);
+          font-family: Roboto, sans-serif;
+          font-weight: 300;
+        }
+
+        input:focus {
+          box-shadow: 0 0 0 0;
+          border: none;
+          outline: 0;
+        }
+
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active {
+            transition: background-color 5000s ease-in-out 0s;
         }
       }
 
-      .enterButton {
-        height: 2.1rem;
-        width: 9rem;
-        border-radius: 15px;
-        border: 0;
+      .loginButton {
+        position: relative;
+        display: flex;
+        justify-content: space-around;
+        
+        margin-top: 1rem;
 
-        color: white;
-        background: var(--green-500);
+        width: 320px;
+  
+        .saveButton {
+          height: 2.1rem;
+          width: 9rem;
+          border-radius: 15px;
+          border: 0;
+  
+          color: white;
+          background: var(--purple-800);
+          filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.45)); 
 
-        transition: filter 0.2s;
+          transition: filter 0.2s;
+          transition: box-shadow 0.2s;
 
-        &:disabled {
-          background: var(--red-500);
-          cursor: default;
+          &:hover:not(:disabled) {
+            filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.1));
+            box-shadow: inset 0px 6px 6px rgba(0, 0, 0, 0.25);
+          }
         }
+  
+        .enterButton {
+          height: 2.1rem;
+          width: 9rem;
+          border-radius: 15px;
+          border: 0;
+  
+          color: white;
+          background: var(--green-500);
 
-        &:hover:not(:disabled) {
-          filter: brightness(0.7);
+          transition: box-shadow 0.2s;
+
+          &:disabled {
+            background: var(--red-500);
+            cursor: default;
+          }
+
+          &:not(:disabled) {
+            filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.40));
+          }
+
+          &:hover:not(:disabled) {
+            filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.1));
+            box-shadow: inset 0px 6px 6px rgba(0, 0, 0, 0.25);
+          }
         }
       }
-    }
+    } 
+  }
+
+  .colapse {
+    margin-top: 10px;
   }
 }
