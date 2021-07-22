@@ -61,7 +61,7 @@ export function LoginContextProvider({ children }: LoginContextProviderProps) {
       }),
     })
     .then((response) => {
-      if (response.data.error) {
+      if (response.data.error ) {
         setIsError(true)
       }
       else {
@@ -70,6 +70,9 @@ export function LoginContextProvider({ children }: LoginContextProviderProps) {
         setSaved(true);
         setIsError(false);
       }
+    })
+    .catch((error) => {
+      setIsError(true)
     })
   }
 
