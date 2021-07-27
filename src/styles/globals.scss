@@ -4,38 +4,6 @@
   box-sizing: border-box;
 }
 
-:root {
-  --white: #fff;
-
-  --gray-50: #f7f8fa;
-  --gray-100: #e6e8eb;
-  --gray-200: #afb2b1;
-  --gray-500: #808080;
-  --gray-800: #494d4b;
-
-  --green-500: #04d361;
-
-  --red-200: #f8b3b1;
-  --red-300: #f4827a;
-  --red-400: #f2554a;
-  --red-500: #ef352b;
-
-  --blue-200: #99d0f2;
-  --blue-300: #439fd9;
-  --blue-400: #3d90d9;
-  --blue-500: #1b72bf;
-
-  --purple-300: #9f75ff;
-  --purple-400: #9164fa;
-  --purple-500: #8257e5;
-  --purple-800: #6f48c9;
-
-  --background-primary: #4dc7f0;
-  --background-secundary: #3390af;
-  --background-secundary-dark: #23748f;
-  --text-color-primary: #fff;
-}
-
 @media (max-width: 1080px) {
   html {
     font-size: 93.75%;

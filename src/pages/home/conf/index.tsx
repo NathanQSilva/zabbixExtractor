@@ -6,6 +6,8 @@ import { useFormik } from 'formik';
 import { Head } from '../../../components/Header/index';
 import { useLogin } from '../../../contexts/LoginContext'
 
+import styles from './index.module.scss'
+
 export default function ConfigHome() {
     const {
         GetLoginKey
@@ -25,10 +27,10 @@ export default function ConfigHome() {
 
     return (
         <Head>
-            <div>
+            <div className={styles.confContainer}>
                 <form onSubmit={formik.handleSubmit}>
-                    <div>
-                        <label>User</label>
+                    <div className={styles.formLabels}>
+                        <label>User: </label>
                         <input
                             id="user"
                             name="user"
@@ -37,7 +39,7 @@ export default function ConfigHome() {
                             value={formik.values.user}
                         />
 
-                        <label>Password</label>
+                        <label>Password: </label>
                         <input
                             id="password"
                             name="password"
@@ -46,7 +48,7 @@ export default function ConfigHome() {
                             value={formik.values.password}
                         />
 
-                        <label>Server</label>
+                        <label>Server: </label>
                         <input
                             id="server"
                             name="server"
@@ -55,11 +57,11 @@ export default function ConfigHome() {
                             value={formik.values.server}
                         />
                     </div>
-                    <div>
+                    <div className={styles.formButton}>
                         <button type="submit">Save options</button>
                     </div>
                 </form>
             </div>
-        </Head>  
+        </Head>
     )
 }

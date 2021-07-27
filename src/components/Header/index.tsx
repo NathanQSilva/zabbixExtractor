@@ -60,6 +60,9 @@ export function Head({ children }: headerProps) {
     <div>
       <div className={styles.header}>
         <div className={styles.options}>
+          <div className={styles.logo}>
+            <h2>Zabbix</h2>
+          </div>
           {optionDashBoard.map((item, index) => {
             return (
               <div

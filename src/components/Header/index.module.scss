@@ -1,31 +1,53 @@
 .header {
-  background: red;
+  position: fixed;
+
+  width: 15%;
+  height: 100vh;
+
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: space-between;
 
-  padding: 15px;
+  background: #373331;
 
-  background: var(--background-primary);
-  color: var(--text-color-primary);
+  font-family: Roboto, sans-serif;
+  color: aliceblue;
+
+  filter: drop-shadow(7px 0px 5px rgba(0, 0, 0, 0.45));
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 30px 0 30px 0;
 }
 
 .options {
   display: flex;
-  padding: 5px;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 10px;
 }
 
 .option {
-  text-align: center;
-  min-width: 90px;
-  padding: 5px;
-  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  border-radius: 15px;
 
-  border-radius: 4px;
-  background-color: var(--background-secundary);
-  cursor: pointer;
+  width: 90%;
+  height: 40px;
 }
 
 .option:hover {
-  background: var(--background-secundary-dark);
+  cursor: pointer;
+  color: #29CDB5;
+}
+
+.option:active {
+  color: red;
 }
