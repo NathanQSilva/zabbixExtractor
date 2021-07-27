@@ -127,12 +127,12 @@
           border: 0;
   
           color: white;
-          background: var(--green-500);
+          background: #04d361;
 
           transition: box-shadow 0.2s;
 
           &:disabled {
-            background: var(--red-500);
+            background: #ef352b;
             cursor: default;
           }
 
