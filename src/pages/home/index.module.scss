@@ -1,55 +1,17 @@
 .homeContainer {
-  display: block;
+    display: block;
+    float: right;
 
-  background: #ccf1fd;
+    width: 85%;
+    
+    background: rgb(233, 233, 233);
 
-  .dashTop {
-    height: 30vh;
+    .graph {
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-    display: flex;
-    justify-content: center;
-    padding-top: 10px;
-  }
-
-  .dashLineTop {
-    display: flex;
-    height: 33vh;
-
-    .topLeft {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      width: 100%;
+        width: 100%;
+        height: 100%;
     }
-
-    .topRight {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      width: 100%;
-    }
-  }
-
-  .dashLineBottom {
-    display: flex;
-    height: 33vh;
-
-    .bottomLeft {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      width: 100%;
-    }
-
-    .bottomRight {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      width: 100%;
-    }
-  }
 }

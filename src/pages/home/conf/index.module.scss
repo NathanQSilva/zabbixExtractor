@@ -1,0 +1,84 @@
+.confContainer {
+    display: block;
+    float: right;
+
+    width: 85%;
+    
+    background: rgb(233, 233, 233);
+
+    form {
+        width: 40%;
+        border-radius: 15px;
+        background: white;
+
+        margin: 25px;
+        padding: 0 20px;
+
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+        .formLabels {
+            display: flex;
+            align-items: left;
+            flex-direction: column;
+
+            label {
+                color: #373331;
+                font-family: Roboto, sans-serif;
+                margin: 15px 0 5px 0;
+            }
+
+            input {
+                height: 60%;
+                border: 0;
+                border-radius: 5px;
+                height: 30px;
+
+                background: rgb(226, 226, 226);
+
+                padding: 15px;
+
+                font-family: Roboto, sans-serif;
+                font-weight: 300;
+
+                filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+            }
+
+            input:focus {
+                box-shadow: 0 0 0 0;
+                border: none;
+                outline: 0;
+            }
+
+            input:-webkit-autofill,
+            input:-webkit-autofill:hover,
+            input:-webkit-autofill:focus,
+            input:-webkit-autofill:active {
+                transition: background-color 5000s ease-in-out 0s;
+        }
+        }
+
+        .formButton {
+            padding: 25px 0 10px 0;
+
+            button {
+                height: 25px;
+                width: 100px;
+
+                border-radius: 5px;
+                border: 0;
+                background: #6f48c9;
+                color: white;
+
+                filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.45));
+
+                transition: filter 0.2s;
+                transition: box-shadow 0.2s;
+
+                &:hover {
+                    filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.1));
+                    box-shadow: inset 0px 6px 6px rgba(0, 0, 0, 0.25);
+                }
+            }
+        }
+    }
+}
