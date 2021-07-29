@@ -2271,3 +2271,10 @@ yocto-queue@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/yocto-queue/-/yocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
+
+zabbix-rpc@^1.2.3:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/zabbix-rpc/-/zabbix-rpc-1.2.3.tgz#fcf19c7745b251ddfd35dca39518af9c6db44a7c"
+  integrity sha512-CDVyuVJVUCKQc6vFFvARwnvdI8O+sE4UX7MRhI8btf9YI2ptnU+tgJg3KSHf+zIvkk1aKm2Pd1oWsImvPxFEKw==
+  dependencies:
+    axios "^0.21.1"
