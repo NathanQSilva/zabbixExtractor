@@ -29,6 +29,7 @@ function Chart(props) {
                 </button>
             </div>
             <Line
+                className={styles.lineChart}
                 data={rawData}
                 options={{ maintainAspectRatio: false }} 
             />
