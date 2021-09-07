@@ -30,6 +30,7 @@
 - [chart.js](https://www.chartjs.org/)
 - [react-chartjs-2](https://github.com/reactchartjs/react-chartjs-2)
 - [react-grid-layout](https://github.com/react-grid-layout/react-grid-layout)
+- [Jira](https://www.atlassian.com/br/software/jira)
 <!--te-->
 
 

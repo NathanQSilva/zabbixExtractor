@@ -510,7 +510,8 @@ chokidar@3.5.1:
     is-glob "~4.0.1"
     normalize-path "~3.0.0"
     readdirp "~3.5.0"
-
+  optionalDependencies:
+    fsevents "~2.3.1"
 
 "chokidar@>=3.0.0 <4.0.0":
   version "3.5.2"
@@ -906,7 +907,7 @@ formik@^2.2.6:
     tiny-warning "^1.0.2"
     tslib "^1.10.0"
 
-fsevents@~2.3.1, fsevents@~2.3.2:
+fsevents@~2.3.2:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.2.tgz#8a526f78b8fdf4623b709e0b975c52c24c02fd1a"
   integrity sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==
@@ -2270,10 +2271,3 @@ yocto-queue@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/yocto-queue/-/yocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
-
-zabbix-rpc@^1.2.3:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/zabbix-rpc/-/zabbix-rpc-1.2.3.tgz#fcf19c7745b251ddfd35dca39518af9c6db44a7c"
-  integrity sha512-CDVyuVJVUCKQc6vFFvARwnvdI8O+sE4UX7MRhI8btf9YI2ptnU+tgJg3KSHf+zIvkk1aKm2Pd1oWsImvPxFEKw==
-  dependencies:
-    axios "^0.21.1"
